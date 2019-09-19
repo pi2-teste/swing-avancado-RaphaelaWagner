@@ -14,6 +14,7 @@ import java.util.Set;
 import javax.swing.ButtonModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author seunome.sobrenome
@@ -22,6 +23,7 @@ public class VendaComputadorView extends javax.swing.JFrame {
 
     Computador meuComputador;
     
+
     /**
      * Creates new form VendaComputadorView
      */
@@ -50,7 +52,13 @@ public class VendaComputadorView extends javax.swing.JFrame {
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
         pnlHD = new javax.swing.JPanel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         pnlAcessorios = new javax.swing.JPanel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
         btnSalvar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -151,33 +159,77 @@ public class VendaComputadorView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pnlHD.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Altere este título conforme prototipo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
+        pnlHD.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Escolha o tipo e a capacidade do HD", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HDD 1TB", "SSD 256 GB", "SSD 1TB" }));
 
         javax.swing.GroupLayout pnlHDLayout = new javax.swing.GroupLayout(pnlHD);
         pnlHD.setLayout(pnlHDLayout);
         pnlHDLayout.setHorizontalGroup(
             pnlHDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(pnlHDLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         pnlHDLayout.setVerticalGroup(
             pnlHDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 45, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHDLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        pnlAcessorios.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Altere este título conforme prototipo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
+        pnlAcessorios.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Acessórios e Serviços", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
+
+        jCheckBox1.setText("MousePad");
+
+        jCheckBox2.setText("HUB USB");
+
+        jCheckBox3.setText("Mochila");
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Garantia Extendida", "Suporte no Local", "Suporte 24 horas", "Instalação do SO" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
 
         javax.swing.GroupLayout pnlAcessoriosLayout = new javax.swing.GroupLayout(pnlAcessorios);
         pnlAcessorios.setLayout(pnlAcessoriosLayout);
         pnlAcessoriosLayout.setHorizontalGroup(
             pnlAcessoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(pnlAcessoriosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlAcessoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox1)
+                    .addComponent(jCheckBox2)
+                    .addComponent(jCheckBox3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         pnlAcessoriosLayout.setVerticalGroup(
             pnlAcessoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 115, Short.MAX_VALUE)
+            .addGroup(pnlAcessoriosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlAcessoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlAcessoriosLayout.createSequentialGroup()
+                        .addComponent(jCheckBox1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCheckBox2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCheckBox3)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         btnCancelar.setText("Cancelar");
 
@@ -195,6 +247,11 @@ public class VendaComputadorView extends javax.swing.JFrame {
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sair.png"))); // NOI18N
         jMenuItem2.setText("Sair");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
@@ -232,11 +289,11 @@ public class VendaComputadorView extends javax.swing.JFrame {
                 .addComponent(pnlHD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19)
                 .addComponent(pnlAcessorios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvar)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51))
+                .addGap(50, 50, 50))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCancelar, btnSalvar});
@@ -249,7 +306,7 @@ public class VendaComputadorView extends javax.swing.JFrame {
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
         this.jLabelImagem.setIcon(new ImageIcon(getClass().getResource("/pc.png")));
-            
+
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
@@ -268,6 +325,31 @@ public class VendaComputadorView extends javax.swing.JFrame {
         novoCliente.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:]
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        // TODO add your handling code here:
+        if (jRadioButton1.isSelected()) {
+            meuComputador.setTipoComputador("PC");
+        }
+        if (jRadioButton2.isSelected()) {
+            meuComputador.setTipoComputador("Notebook");
+        }
+        if (jRadioButton3.isSelected()) {
+            meuComputador.setTipoComputador("Servidor");
+        }
+        if (jToggleButton1.isSelected()) {
+            meuComputador.setSistemaOperacional("Windows");
+        }
+        if (jToggleButton2.isSelected()) {
+            meuComputador.setSistemaOperacional("Linux");
+        
+        JOptionPane.showMessageDialog(null, "Obrigado por comprar um " +meuComputador.getTipoComputador()+ " com " + meuComputador.getSistemaOperacional());
+    }//GEN-LAST:event_btnSalvarActionPerformed
+    }
     /**
      * @param args the command line arguments
      */
@@ -311,7 +393,12 @@ public class VendaComputadorView extends javax.swing.JFrame {
     private javax.swing.JButton btnSalvar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabelImagem;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -320,6 +407,7 @@ public class VendaComputadorView extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JPanel pnlAcessorios;
