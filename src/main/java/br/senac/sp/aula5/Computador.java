@@ -10,17 +10,18 @@ package br.senac.sp.aula5;
  * @author seunome.sobrenome
  */
 public class Computador {
-        public static String fabricante = "Dell";
-        
-        public String tipoComputador;
-        public String sistemaOperacional;
-        public String HD;
-        public String[] acessorios;
-        public String[] servicos;
-        
-        public Computador(){
-            
-        }
+
+    public static String fabricante = "Dell";
+
+    public String tipoComputador;
+    public String sistemaOperacional;
+    public String HD;
+    String[] acessorios = new String[3];
+    String[] serviços = new String[4];
+
+    public Computador() {
+
+    }
 
     public static void setFabricante(String fabricante) {
         Computador.fabricante = fabricante;
@@ -43,7 +44,7 @@ public class Computador {
     }
 
     public void setServicos(String[] servicos) {
-        this.servicos = servicos;
+        this.serviços = servicos;
     }
 
     public static String getFabricante() {
@@ -67,9 +68,6 @@ public class Computador {
     }
 
     public String[] getServicos() {
-        return servicos;
+        return serviços;
     }
 }
-    
-
-
